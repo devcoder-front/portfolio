@@ -1,0 +1,35 @@
+<section id="education" class="section education" aria-labelledby="education-heading">
+  <div class="section-inner">
+    <app-section-heading headingId="education-heading" eyebrow="Foundation" title="Education &amp; Languages" />
+
+    <div class="education__grid">
+      <article class="education-card" appReveal appSpotlight>
+        <span class="education-card__icon">
+          <app-icon name="graduation-cap" [size]="22" />
+        </span>
+        <div>
+          <h3>{{ education.degree }}</h3>
+          <p class="education-card__institution">{{ education.institution }}</p>
+          <p class="education-card__period">{{ education.period }}</p>
+        </div>
+      </article>
+
+      <article class="education-card" appReveal appSpotlight [appRevealDelay]="90">
+        <span class="education-card__icon">
+          <app-icon name="sparkle" [size]="22" />
+        </span>
+        <div>
+          <h3>Languages</h3>
+          <ul class="education-card__languages">
+            @for (language of languages; track language.name) {
+              <li>
+                <span>{{ language.name }}</span>
+                <span class="education-card__level">{{ language.level }}</span>
+              </li>
+            }
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

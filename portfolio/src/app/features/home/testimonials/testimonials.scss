@@ -1,0 +1,28 @@
+@use 'mixins';
+
+.testimonials__placeholder {
+  @include mixins.surface-card;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  text-align: center;
+  padding: var(--space-10) var(--space-6);
+  border-style: dashed;
+}
+
+.testimonials__quote-icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+}
+
+.testimonials__placeholder p {
+  max-width: 48ch;
+  color: var(--text-secondary);
+  line-height: var(--lh-normal);
+}

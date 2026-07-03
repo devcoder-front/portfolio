@@ -1,0 +1,16 @@
+.section-heading {
+  max-width: 640px;
+  margin-bottom: var(--space-9);
+
+  h2 {
+    margin-top: var(--space-3);
+    font-size: clamp(var(--fs-2xl), 3.2vw, var(--fs-3xl));
+  }
+
+  &__subtitle {
+    margin-top: var(--space-3);
+    font-size: var(--fs-md);
+    color: var(--text-secondary);
+    line-height: var(--lh-normal);
+  }
+}

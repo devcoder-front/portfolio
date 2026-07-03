@@ -1,0 +1,68 @@
+<section id="home" class="hero" aria-label="Introduction">
+  <div class="hero__glow hero__glow--one" aria-hidden="true"></div>
+  <div class="hero__glow hero__glow--two" aria-hidden="true"></div>
+
+  <div class="container hero__inner">
+    <div class="hero__content" appReveal>
+      <span class="eyebrow">
+        <app-icon name="sparkle" [size]="14" />
+        Currently {{ profile.currentRole }} at {{ profile.currentCompany }}
+      </span>
+
+      <h1 class="hero__headline">
+        Hi, I'm {{ profile.name }} —
+        <span class="gradient-text">Senior Frontend Engineer &amp; Angular Architect</span>
+      </h1>
+
+      <p class="hero__summary">{{ profile.summary }}</p>
+
+      <div class="hero__ctas">
+        <a class="button button--primary" href="assets/resume/Abhishek_Sharma_Resume.pdf" download>
+          <app-icon name="download" [size]="16" />
+          Download Resume
+        </a>
+        <a class="button button--secondary" href="#contact">Hire Me</a>
+        <a class="button button--ghost" href="#experience">
+          View Experience
+          <app-icon name="arrow-right" [size]="16" />
+        </a>
+      </div>
+
+      <ul class="hero__socials" aria-label="Social profiles">
+        @for (social of socials; track social.href) {
+          <li>
+            <a [href]="social.href" [attr.aria-label]="social.label" target="_blank" rel="noopener noreferrer">
+              <app-icon [name]="social.icon" [size]="17" />
+              <span>{{ social.label }}</span>
+            </a>
+          </li>
+        }
+      </ul>
+    </div>
+
+    <div class="hero__visual" appReveal [appRevealDelay]="120">
+      <div class="hero__avatar-ring">
+        <img
+          class="hero__avatar-photo"
+          src="assets/images/profile.png"
+          width="360"
+          height="360"
+          [alt]="profile.name"
+          fetchpriority="high"
+        />
+      </div>
+      <p class="hero__visual-caption">{{ profile.location }}</p>
+    </div>
+  </div>
+
+  <div class="hero__stats container">
+    @for (metric of metrics; track metric.label) {
+      <div class="hero__stat" appReveal>
+        <p class="hero__stat-value">
+          <app-stat-counter [value]="metric.value" [suffix]="metric.suffix" />
+        </p>
+        <p class="hero__stat-label">{{ metric.label }}</p>
+      </div>
+    }
+  </div>
+</section>

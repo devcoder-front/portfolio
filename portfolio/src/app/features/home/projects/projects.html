@@ -1,0 +1,84 @@
+<section id="projects" class="section projects" aria-labelledby="projects-heading">
+  <div class="section-inner">
+    <app-section-heading
+      headingId="projects-heading"
+      eyebrow="Selected work"
+      title="Projects"
+      subtitle="Flagship platforms delivered for Google, S&P Global, Wolters Kluwer and British Telecom. All are proprietary, closed-source enterprise systems — details below are drawn directly from delivery scope and outcomes."
+    />
+
+    <div class="projects__grid">
+      @for (project of projects; track project.id; let i = $index) {
+        <article class="project-card" appReveal appSpotlight [appRevealDelay]="i * 90">
+          <header class="project-card__header">
+            <div>
+              <h3>{{ project.name }}</h3>
+              <p class="project-card__org">{{ project.organization }} · {{ project.period }}</p>
+            </div>
+          </header>
+
+          <p class="project-card__problem">{{ project.problem }}</p>
+
+          <ul class="project-card__tech">
+            @for (tech of project.techStack; track tech) {
+              <li><app-chip>{{ tech }}</app-chip></li>
+            }
+          </ul>
+
+          <ul class="project-card__impact">
+            @for (item of project.impact; track item) {
+              <li>
+                <app-icon name="check" [size]="15" />
+                <span>{{ item }}</span>
+              </li>
+            }
+          </ul>
+
+          <button
+            type="button"
+            class="project-card__toggle"
+            (click)="toggle(project.id)"
+            [attr.aria-expanded]="expandedId() === project.id"
+            [attr.aria-controls]="'project-panel-' + project.id"
+          >
+            {{ expandedId() === project.id ? 'Hide details' : 'View architecture & challenges' }}
+            <app-icon name="chevron-down" [size]="16" [class.is-open]="expandedId() === project.id" />
+          </button>
+
+          <div class="project-card__panel-wrap" [class.is-open]="expandedId() === project.id">
+            <div
+              class="project-card__panel"
+              [id]="'project-panel-' + project.id"
+              [attr.aria-hidden]="expandedId() === project.id ? null : 'true'"
+            >
+              <div>
+                <h4>Solution</h4>
+                <p>{{ project.solution }}</p>
+              </div>
+              <div>
+                <h4>Architecture</h4>
+                <p>{{ project.architecture }}</p>
+              </div>
+              <div>
+                <h4>Key deliverables</h4>
+                <ul class="project-card__deliverables">
+                  @for (deliverable of project.deliverables; track deliverable) {
+                    <li>{{ deliverable }}</li>
+                  }
+                </ul>
+              </div>
+              <div>
+                <h4>Challenges</h4>
+                <p>{{ project.challenges }}</p>
+              </div>
+              <p class="project-card__proprietary">
+                <app-icon name="external" [size]="14" />
+                Proprietary enterprise software — source and live demo are not publicly available.
+              </p>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

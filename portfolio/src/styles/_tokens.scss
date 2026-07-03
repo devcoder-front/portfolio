@@ -1,0 +1,95 @@
+// Design tokens — single source of truth for the visual system.
+// Consumed as CSS custom properties so runtime theme switching needs no JS re-render.
+
+:root {
+  // ---- Base palette (neutral scale, warm-cool balanced) ----
+  --color-neutral-0: #ffffff;
+  --color-neutral-50: #f7f8fa;
+  --color-neutral-100: #eef0f3;
+  --color-neutral-200: #dfe3e8;
+  --color-neutral-300: #c3c9d1;
+  --color-neutral-400: #9aa2ad;
+  --color-neutral-500: #6b7280;
+  --color-neutral-600: #4b5261;
+  --color-neutral-700: #333a47;
+  --color-neutral-800: #1e222b;
+  --color-neutral-900: #12151b;
+  --color-neutral-950: #0a0c10;
+
+  // ---- Brand accent (indigo-electric, used sparingly) ----
+  --color-accent-400: #8b93ff;
+  --color-accent-500: #6366f1;
+  --color-accent-600: #4f46e5;
+  --color-accent-700: #4338ca;
+
+  --color-success-500: #22c55e;
+  --color-warning-500: #f59e0b;
+
+  // ---- Typography ----
+  --font-sans:
+    'Inter var', Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: 1.25rem;
+  --fs-xl: 1.5rem;
+  --fs-2xl: 1.875rem;
+  --fs-3xl: 2.25rem;
+  --fs-4xl: 2.75rem;
+  --fs-5xl: 3.5rem;
+
+  --lh-tight: 1.15;
+  --lh-snug: 1.35;
+  --lh-normal: 1.6;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  // ---- Spacing scale ----
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 2.5rem;
+  --space-8: 3rem;
+  --space-9: 4rem;
+  --space-10: 5rem;
+  --space-11: 6.5rem;
+  --space-12: 8rem;
+
+  // ---- Layout ----
+  --container-max: 1180px;
+  --container-pad: clamp(1.25rem, 4vw, 3rem);
+
+  // ---- Radii ----
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 999px;
+
+  // ---- Motion ----
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 150ms;
+  --dur-base: 250ms;
+  --dur-slow: 450ms;
+
+  // ---- Elevation ----
+  --shadow-sm: 0 1px 2px rgba(10, 12, 16, 0.06);
+  --shadow-md: 0 8px 24px -8px rgba(10, 12, 16, 0.16);
+  --shadow-lg: 0 24px 48px -16px rgba(10, 12, 16, 0.24);
+  --shadow-glow: 0 0 0 1px rgba(99, 102, 241, 0.15), 0 8px 32px -8px rgba(99, 102, 241, 0.35);
+
+  // ---- Z-index scale ----
+  --z-nav: 100;
+  --z-overlay: 200;
+  --z-toast: 300;
+}

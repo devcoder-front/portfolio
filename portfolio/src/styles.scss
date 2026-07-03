@@ -1,0 +1,197 @@
+@use './styles/tokens';
+@use './styles/themes';
+@use './styles/reset';
+@use './styles/mixins';
+
+html,
+body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  color: var(--text-primary);
+  background: var(--surface-0);
+  transition:
+    background-color var(--dur-base) var(--ease-out),
+    color var(--dur-base) var(--ease-out);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.02em;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--text-on-accent);
+}
+
+// Skip-to-content link — first focusable element on the page for keyboard/AT users.
+.skip-link {
+  position: fixed;
+  top: -100%;
+  left: var(--space-4);
+  z-index: var(--z-toast);
+  padding: var(--space-3) var(--space-5);
+  background: var(--surface-raised);
+  color: var(--text-primary);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  transition: top var(--dur-fast) var(--ease-out);
+
+  &:focus-visible {
+    top: var(--space-4);
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+.container {
+  @include mixins.container;
+}
+
+.section {
+  padding-block: var(--space-11);
+
+  @media (max-width: 640px) {
+    padding-block: var(--space-9);
+  }
+}
+
+.section-inner {
+  @include mixins.container;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.gradient-text {
+  background: linear-gradient(120deg, var(--text-primary) 40%, var(--accent) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+// Utility reveal-on-scroll state, toggled by the RevealDirective.
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity var(--dur-slow) var(--ease-out),
+    transform var(--dur-slow) var(--ease-out);
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+.visually-hidden {
+  @include mixins.visually-hidden;
+}
+
+// ---- Buttons ----
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: 0.7rem var(--space-6);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  border-radius: var(--radius-full);
+  border: 1px solid transparent;
+  white-space: nowrap;
+  overflow: hidden;
+  transition:
+    transform var(--dur-fast) var(--ease-out),
+    background-color var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out);
+
+  @include mixins.focus-ring;
+
+  app-icon {
+    transition: transform var(--dur-base) var(--ease-out);
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: scale(0.97) translateY(0);
+  }
+
+  &--primary {
+    color: var(--text-on-accent);
+    background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+    box-shadow: var(--shadow-sm);
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, 0.35) 48%, transparent 65%);
+      transform: translateX(-120%);
+      transition: transform var(--dur-slow) var(--ease-out);
+    }
+
+    &:hover {
+      box-shadow: var(--shadow-glow);
+
+      &::before {
+        transform: translateX(120%);
+      }
+    }
+
+    @include mixins.reduced-motion {
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  &--secondary {
+    color: var(--text-primary);
+    background: var(--surface-1);
+    border-color: var(--border-strong);
+
+    &:hover {
+      background: var(--surface-2);
+      border-color: var(--accent-soft-border);
+    }
+  }
+
+  &--ghost {
+    color: var(--text-secondary);
+
+    &:hover {
+      color: var(--accent);
+
+      app-icon {
+        transform: translateX(3px);
+      }
+    }
+  }
+}

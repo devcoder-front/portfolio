@@ -1,0 +1,72 @@
+<section id="experience" class="section experience" aria-labelledby="experience-heading">
+  <div class="section-inner">
+    <app-section-heading
+      headingId="experience-heading"
+      eyebrow="Career journey"
+      title="Experience"
+      subtitle="Nine years building enterprise-grade frontend systems — from British Telecom's 20M-user customer platforms to Google's developer consoles and FinTech compliance tooling."
+    />
+
+    <ol class="timeline">
+      @for (entry of entries; track entry.id; let isLast = $last; let i = $index) {
+        <li class="timeline__item" appReveal [appRevealDelay]="i * 90" [class.timeline__item--last]="isLast">
+          <div class="timeline__marker">
+            <span class="timeline__dot" [class.timeline__dot--current]="entry.isCurrent"></span>
+            @if (!isLast) {
+              <span class="timeline__line"></span>
+            }
+          </div>
+
+          <div class="timeline__card" appSpotlight>
+            <button
+              type="button"
+              class="timeline__header"
+              (click)="toggle(entry.id)"
+              [attr.aria-expanded]="expandedId() === entry.id"
+              [attr.aria-controls]="'timeline-panel-' + entry.id"
+            >
+              <div>
+                <p class="timeline__role">
+                  {{ entry.role }}
+                  @if (entry.isCurrent) {
+                    <span class="timeline__current-badge">Current</span>
+                  }
+                </p>
+                <p class="timeline__company">{{ entry.company }} · {{ entry.companyContext }}</p>
+                <p class="timeline__project">{{ entry.projectTag }}</p>
+              </div>
+
+              <div class="timeline__header-right">
+                <span class="timeline__dates">{{ entry.startDate }} – {{ entry.endDate }}</span>
+                <app-icon name="chevron-down" [size]="18" class="timeline__chevron" [class.is-open]="expandedId() === entry.id" />
+              </div>
+            </button>
+
+            <div class="timeline__panel-wrap" [class.is-open]="expandedId() === entry.id">
+              <div
+                class="timeline__panel"
+                [id]="'timeline-panel-' + entry.id"
+                [attr.aria-hidden]="expandedId() === entry.id ? null : 'true'"
+              >
+                <ul class="timeline__tech">
+                  @for (tech of entry.technologies; track tech) {
+                    <li><app-chip tone="accent">{{ tech }}</app-chip></li>
+                  }
+                </ul>
+
+                <ul class="timeline__highlights">
+                  @for (highlight of entry.highlights; track highlight) {
+                    <li>
+                      <app-icon name="check" [size]="15" />
+                      <span>{{ highlight }}</span>
+                    </li>
+                  }
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+      }
+    </ol>
+  </div>
+</section>

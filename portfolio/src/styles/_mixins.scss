@@ -1,0 +1,67 @@
+@mixin container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@mixin focus-ring {
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: var(--radius-sm);
+  }
+}
+
+@mixin reduced-motion {
+  @media (prefers-reduced-motion: reduce) {
+    @content;
+  }
+}
+
+@mixin surface-card {
+  background: var(--surface-raised);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+/// Cursor-tracking glow, driven by --spot-x/--spot-y (set by [appSpotlight]).
+/// Host needs `position: relative; overflow: hidden` for the glow to be clipped to bounds.
+@mixin spotlight-surface {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: var(--spot-opacity, 0);
+    background: radial-gradient(
+      280px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+      var(--accent-soft),
+      transparent 70%
+    );
+    transition: opacity var(--dur-base) var(--ease-out);
+    pointer-events: none;
+  }
+
+  @include reduced-motion {
+    &::before {
+      display: none;
+    }
+  }
+}

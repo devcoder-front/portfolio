@@ -1,0 +1,52 @@
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<app-navbar />
+
+<main id="main-content">
+  <app-hero />
+
+  @defer (on idle; prefetch on idle) {
+    <app-experience />
+  } @loading (minimum 100ms) {
+    <div class="section-placeholder" aria-hidden="true"></div>
+  }
+
+  @defer (on idle; prefetch on idle) {
+    <app-projects />
+  } @loading (minimum 100ms) {
+    <div class="section-placeholder" aria-hidden="true"></div>
+  }
+
+  @defer (on idle; prefetch on idle) {
+    <app-skills />
+  } @loading (minimum 100ms) {
+    <div class="section-placeholder" aria-hidden="true"></div>
+  }
+
+  @defer (on idle; prefetch on idle) {
+    <app-achievements />
+  } @loading (minimum 100ms) {
+    <div class="section-placeholder" aria-hidden="true"></div>
+  }
+
+  @defer (on idle; prefetch on idle) {
+    <app-education />
+  } @loading (minimum 100ms) {
+    <div class="section-placeholder" aria-hidden="true"></div>
+  }
+
+  @defer (on idle; prefetch on idle) {
+    <app-testimonials />
+  } @loading (minimum 100ms) {
+    <div class="section-placeholder" aria-hidden="true"></div>
+  }
+
+  @defer (on idle; prefetch on idle) {
+    <app-contact />
+  } @loading (minimum 100ms) {
+    <div class="section-placeholder" aria-hidden="true"></div>
+  }
+</main>
+
+<app-footer />
+<app-back-to-top />

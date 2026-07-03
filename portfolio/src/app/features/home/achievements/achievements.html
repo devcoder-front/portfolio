@@ -1,0 +1,22 @@
+<section id="achievements" class="section achievements" aria-labelledby="achievements-heading">
+  <div class="section-inner">
+    <app-section-heading
+      headingId="achievements-heading"
+      eyebrow="Recognition"
+      title="Awards &amp; Achievements"
+      subtitle="Recognized across three organizations for engineering quality, delivery under pressure, and accessibility leadership."
+    />
+
+    <div class="achievements__grid">
+      @for (award of awards; track award.title; let i = $index) {
+        <article class="achievement-card" appReveal appSpotlight [appRevealDelay]="i * 70">
+          <span class="achievement-card__icon">
+            <app-icon name="award" [size]="20" />
+          </span>
+          <h3>{{ award.title }}</h3>
+          <p>{{ award.description }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>

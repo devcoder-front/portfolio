@@ -1,0 +1,74 @@
+// Semantic color roles, remapped per theme. Components should only ever
+// reference these --surface/--text/--border tokens, never raw palette values.
+
+:root,
+:root[data-theme='light'] {
+  --surface-0: var(--color-neutral-0);
+  --surface-1: var(--color-neutral-50);
+  --surface-2: var(--color-neutral-100);
+  --surface-raised: var(--color-neutral-0);
+  --border-subtle: var(--color-neutral-200);
+  --border-strong: var(--color-neutral-300);
+
+  --text-primary: var(--color-neutral-900);
+  --text-secondary: var(--color-neutral-600);
+  --text-tertiary: var(--color-neutral-500);
+  --text-on-accent: #ffffff;
+
+  --accent: var(--color-accent-600);
+  --accent-strong: var(--color-accent-700);
+  --accent-soft: rgba(79, 70, 229, 0.08);
+  --accent-soft-border: rgba(79, 70, 229, 0.18);
+
+  --scrim: rgba(10, 12, 16, 0.5);
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  --surface-0: var(--color-neutral-950);
+  --surface-1: var(--color-neutral-900);
+  --surface-2: var(--color-neutral-800);
+  --surface-raised: #171a21;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+
+  --text-primary: var(--color-neutral-0);
+  --text-secondary: var(--color-neutral-300);
+  --text-tertiary: var(--color-neutral-400);
+  --text-on-accent: #ffffff;
+
+  --accent: var(--color-accent-400);
+  --accent-strong: var(--color-accent-500);
+  --accent-soft: rgba(139, 147, 255, 0.12);
+  --accent-soft-border: rgba(139, 147, 255, 0.24);
+
+  --scrim: rgba(0, 0, 0, 0.6);
+  color-scheme: dark;
+}
+
+// System-preference fallback for the instant before the persisted/theme-service
+// value applies (data-theme is set synchronously in index.html before paint,
+// but this covers the no-JS / first-paint edge case too).
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']):not([data-theme='dark']) {
+    --surface-0: var(--color-neutral-950);
+    --surface-1: var(--color-neutral-900);
+    --surface-2: var(--color-neutral-800);
+    --surface-raised: #171a21;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(255, 255, 255, 0.16);
+
+    --text-primary: var(--color-neutral-0);
+    --text-secondary: var(--color-neutral-300);
+    --text-tertiary: var(--color-neutral-400);
+    --text-on-accent: #ffffff;
+
+    --accent: var(--color-accent-400);
+    --accent-strong: var(--color-accent-500);
+    --accent-soft: rgba(139, 147, 255, 0.12);
+    --accent-soft-border: rgba(139, 147, 255, 0.24);
+
+    --scrim: rgba(0, 0, 0, 0.6);
+    color-scheme: dark;
+  }
+}

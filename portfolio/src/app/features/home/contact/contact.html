@@ -1,0 +1,54 @@
+<section id="contact" class="section contact" aria-labelledby="contact-heading">
+  <div class="section-inner">
+    <div class="contact__card" appReveal>
+      <div class="contact__copy">
+        <span class="eyebrow">Let's build something great</span>
+        <h2 id="contact-heading">Open to Senior &amp; Staff Frontend opportunities</h2>
+        <p>
+          Currently {{ profile.currentRole }} at {{ profile.currentCompany }}. Reach out directly for roles,
+          consulting, or a technical conversation — I typically respond within a day.
+        </p>
+
+        <div class="contact__actions">
+          <a class="button button--primary" [href]="'mailto:' + profile.email">
+            <app-icon name="email" [size]="16" />
+            Email Me
+          </a>
+          <button
+            type="button"
+            class="button button--secondary contact__copy-btn"
+            [class.is-copied]="copied()"
+            (click)="copyEmail()"
+          >
+            <app-icon name="check" [size]="16" />
+            {{ copied() ? 'Copied!' : 'Copy Email' }}
+          </button>
+        </div>
+      </div>
+
+      <ul class="contact__list">
+        @for (social of socials; track social.icon) {
+          <li>
+            @if (social.href) {
+              <a [href]="social.href" [attr.target]="social.icon === 'email' ? null : '_blank'" rel="noopener noreferrer">
+                <span class="contact__list-icon"><app-icon [name]="social.icon" [size]="17" /></span>
+                <span>
+                  <strong>{{ social.label }}</strong>
+                  <small>{{ social.icon === 'email' ? profile.email : 'View profile' }}</small>
+                </span>
+              </a>
+            } @else {
+              <div class="contact__list-static">
+                <span class="contact__list-icon"><app-icon [name]="social.icon" [size]="17" /></span>
+                <span>
+                  <strong>{{ social.label }}</strong>
+                  <small>{{ profile.location }}</small>
+                </span>
+              </div>
+            }
+          </li>
+        }
+      </ul>
+    </div>
+  </div>
+</section>

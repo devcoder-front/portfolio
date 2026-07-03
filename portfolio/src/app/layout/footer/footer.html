@@ -1,0 +1,23 @@
+<footer class="footer">
+  <div class="footer__inner container">
+    <div class="footer__brand">
+      <span class="footer__brand-mark">{{ profile.initials }}</span>
+      <div>
+        <p class="footer__name">{{ profile.name }}</p>
+        <p class="footer__title">{{ profile.title }}</p>
+      </div>
+    </div>
+
+    <ul class="footer__socials">
+      @for (social of socials; track social.href) {
+        <li>
+          <a [href]="social.href" [attr.aria-label]="social.label" target="_blank" rel="noopener noreferrer">
+            <app-icon [name]="social.icon" [size]="18" />
+          </a>
+        </li>
+      }
+    </ul>
+
+    <p class="footer__copy">© {{ year }} {{ profile.name }}. Built with Angular.</p>
+  </div>
+</footer>

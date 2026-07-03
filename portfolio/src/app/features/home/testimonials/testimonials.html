@@ -1,0 +1,21 @@
+<section id="testimonials" class="section testimonials" aria-labelledby="testimonials-heading">
+  <div class="section-inner">
+    <app-section-heading headingId="testimonials-heading" eyebrow="What colleagues say" title="Testimonials" />
+
+    <div class="testimonials__placeholder" appReveal>
+      <span class="testimonials__quote-icon">
+        <app-icon name="quote" [size]="26" />
+      </span>
+      <p>
+        Recommendations from managers and peers at Google, S&amp;P Global, HCLTech and GlobalLogic will appear here
+        once added.
+      </p>
+      @if (linkedIn) {
+        <a class="button button--secondary" [href]="linkedIn" target="_blank" rel="noopener noreferrer">
+          View recommendations on LinkedIn
+          <app-icon name="external" [size]="15" />
+        </a>
+      }
+    </div>
+  </div>
+</section>

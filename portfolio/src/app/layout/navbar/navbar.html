@@ -1,0 +1,68 @@
+<header class="navbar" [class.navbar--scrolled]="isScrolled()">
+  <div class="navbar__progress" [style.--progress.%]="scroll.progress()" aria-hidden="true"></div>
+
+  <div class="navbar__inner container">
+    <a class="navbar__brand" href="#home" (click)="closeMenu()">
+      <span class="navbar__brand-mark">{{ profile.initials }}</span>
+      <span class="navbar__brand-name">{{ profile.name }}</span>
+    </a>
+
+    <nav class="navbar__links" aria-label="Primary">
+      <ul>
+        @for (link of links; track link.id) {
+          <li>
+            <a
+              [href]="'#' + link.id"
+              [class.is-active]="scroll.activeSectionId() === link.id"
+              [attr.aria-current]="scroll.activeSectionId() === link.id ? 'true' : null"
+            >
+              {{ link.label }}
+            </a>
+          </li>
+        }
+      </ul>
+    </nav>
+
+    <div class="navbar__actions">
+      <button
+        type="button"
+        class="navbar__icon-btn navbar__theme-toggle"
+        (click)="toggleTheme()"
+        [attr.aria-label]="theme.theme() === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'"
+      >
+        <span class="navbar__icon-swap" [class.is-dark]="theme.theme() === 'dark'">
+          <app-icon name="sun" [size]="18" class="navbar__icon-swap-a" />
+          <app-icon name="moon" [size]="18" class="navbar__icon-swap-b" />
+        </span>
+      </button>
+
+      <a class="button button--primary navbar__cta" href="#contact">Hire Me</a>
+
+      <button
+        type="button"
+        class="navbar__icon-btn navbar__menu-toggle"
+        (click)="toggleMenu()"
+        [attr.aria-label]="isMenuOpen() ? 'Close menu' : 'Open menu'"
+        [attr.aria-expanded]="isMenuOpen()"
+        aria-controls="mobile-nav"
+      >
+        <span class="navbar__icon-swap" [class.is-dark]="isMenuOpen()">
+          <app-icon name="menu" [size]="20" class="navbar__icon-swap-a" />
+          <app-icon name="close" [size]="20" class="navbar__icon-swap-b" />
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-nav" class="navbar__mobile" aria-label="Mobile" [class.is-open]="isMenuOpen()">
+    <ul>
+      @for (link of links; track link.id) {
+        <li>
+          <a [href]="'#' + link.id" (click)="closeMenu()" [class.is-active]="scroll.activeSectionId() === link.id">
+            {{ link.label }}
+          </a>
+        </li>
+      }
+    </ul>
+  </nav>
+</header>

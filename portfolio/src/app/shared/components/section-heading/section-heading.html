@@ -1,0 +1,7 @@
+<div class="section-heading" appReveal>
+  <span class="eyebrow">{{ eyebrow() }}</span>
+  <h2 [id]="headingId() || null">{{ title() }}</h2>
+  @if (subtitle()) {
+    <p class="section-heading__subtitle">{{ subtitle() }}</p>
+  }
+</div>

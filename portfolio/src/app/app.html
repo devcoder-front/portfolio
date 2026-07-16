@@ -24,6 +24,12 @@
   }
 
   @defer (on idle; prefetch on idle) {
+    <app-leetcode />
+  } @loading (minimum 100ms) {
+    <div class="section-placeholder" aria-hidden="true"></div>
+  }
+
+  @defer (on idle; prefetch on idle) {
     <app-achievements />
   } @loading (minimum 100ms) {
     <div class="section-placeholder" aria-hidden="true"></div>

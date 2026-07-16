@@ -1,0 +1,101 @@
+<section id="leetcode" class="section leetcode" aria-labelledby="leetcode-heading">
+  <div class="section-inner">
+    <app-section-heading
+      headingId="leetcode-heading"
+      eyebrow="Problem Solving"
+      title="LeetCode Progress"
+      subtitle="Live problem-solving stats, fetched in real time from my LeetCode profile."
+    />
+
+    @switch (status()) {
+      @case ('loading') {
+        <div class="leetcode-card leetcode-card--skeleton" aria-busy="true">
+          <span class="visually-hidden">Loading LeetCode stats…</span>
+          <div class="leetcode-card__skeleton-ring"></div>
+          <div class="leetcode-card__skeleton-meters">
+            <div class="leetcode-card__skeleton-bar"></div>
+            <div class="leetcode-card__skeleton-bar"></div>
+            <div class="leetcode-card__skeleton-bar"></div>
+          </div>
+        </div>
+      }
+      @case ('error') {
+        <div class="leetcode-card leetcode-card--error" appReveal>
+          <app-icon name="sparkle" [size]="22" />
+          <p>Live stats are temporarily unavailable.</p>
+          <a class="button button--secondary" [href]="profileUrl" target="_blank" rel="noopener noreferrer">
+            View profile on LeetCode
+            <app-icon name="arrow-right" [size]="16" />
+          </a>
+        </div>
+      }
+      @case ('success') {
+        @if (stats(); as data) {
+          <div class="leetcode-card" appReveal appSpotlight>
+            <div class="leetcode-card__ring-block">
+              <svg
+                class="leetcode-card__ring"
+                viewBox="0 0 200 200"
+                role="img"
+                [attr.aria-label]="ringLabel()"
+              >
+                <circle class="leetcode-card__ring-track" cx="100" cy="100" r="86" />
+                @for (segment of ringSegments(); track segment.key) {
+                  <circle
+                    class="leetcode-card__ring-fill"
+                    cx="100"
+                    cy="100"
+                    r="86"
+                    [style.stroke]="segment.color"
+                    [attr.stroke-dasharray]="segment.dasharray"
+                    [attr.stroke-dashoffset]="segment.dashoffset"
+                  />
+                }
+              </svg>
+              <div class="leetcode-card__ring-center">
+                <app-stat-counter class="leetcode-card__ring-value" [value]="data.totalSolved" [durationMs]="1400" />
+                <span class="leetcode-card__ring-label">Problems Solved</span>
+                <span class="leetcode-card__ring-sub">
+                  <span class="leetcode-card__live-dot" aria-hidden="true"></span>
+                  Live from LeetCode
+                </span>
+              </div>
+            </div>
+
+            <div class="leetcode-card__meters">
+              @for (level of levels(); track level.key) {
+                <div class="leetcode-card__meter">
+                  <div class="leetcode-card__meter-head">
+                    <span class="leetcode-card__meter-dot" [style.background]="level.color"></span>
+                    <span class="leetcode-card__meter-label">{{ level.label }}</span>
+                    <span class="leetcode-card__meter-count">{{ level.solved }} / {{ level.total }}</span>
+                  </div>
+                  <div class="leetcode-card__meter-track">
+                    <div
+                      class="leetcode-card__meter-fill"
+                      [style.background]="level.color"
+                      [style.--fill-pct.%]="level.percent"
+                    ></div>
+                  </div>
+                </div>
+              }
+            </div>
+
+            <div class="leetcode-card__footer">
+              <span class="leetcode-card__pool">
+                Across {{ data.totalQuestions }} problems tracked on LeetCode
+                @if (data.ranking) {
+                  · <app-icon name="award" [size]="13" /> Global Rank {{ data.ranking }}
+                }
+              </span>
+              <a class="leetcode-card__link" [href]="profileUrl" target="_blank" rel="noopener noreferrer">
+                View full profile
+                <app-icon name="external" [size]="14" />
+              </a>
+            </div>
+          </div>
+        }
+      }
+    }
+  </div>
+</section>

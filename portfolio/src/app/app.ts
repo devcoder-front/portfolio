@@ -6,6 +6,7 @@ import { Hero } from './features/home/hero/hero';
 import { Experience } from './features/home/experience/experience';
 import { Projects } from './features/home/projects/projects';
 import { Skills } from './features/home/skills/skills';
+import { Leetcode } from './features/home/leetcode/leetcode';
 import { Achievements } from './features/home/achievements/achievements';
 import { Education } from './features/home/education/education';
 import { Testimonials } from './features/home/testimonials/testimonials';
@@ -17,6 +18,7 @@ const SECTION_IDS = [
   'experience',
   'projects',
   'skills',
+  'leetcode',
   'achievements',
   'education',
   'testimonials',
@@ -26,7 +28,20 @@ const SECTION_IDS = [
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [Navbar, Footer, BackToTop, Hero, Experience, Projects, Skills, Achievements, Education, Testimonials, Contact],
+  imports: [
+    Navbar,
+    Footer,
+    BackToTop,
+    Hero,
+    Experience,
+    Projects,
+    Skills,
+    Leetcode,
+    Achievements,
+    Education,
+    Testimonials,
+    Contact
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './app.html',
   styleUrl: './app.scss'

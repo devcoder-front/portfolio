@@ -22,6 +22,11 @@
 
   --scrim: rgba(10, 12, 16, 0.5);
   color-scheme: light;
+
+  // Difficulty scale — validated against #fcfcfb-ish surfaces (six-checks CVD pass)
+  --difficulty-easy: var(--color-difficulty-easy);
+  --difficulty-medium: #f59e0b;
+  --difficulty-hard: #ef4444;
 }
 
 :root[data-theme='dark'] {
@@ -44,6 +49,11 @@
 
   --scrim: rgba(0, 0, 0, 0.6);
   color-scheme: dark;
+
+  // Difficulty scale — re-stepped for the dark surface (own lightness band + CVD pass)
+  --difficulty-easy: var(--color-difficulty-easy);
+  --difficulty-medium: #c07f0c;
+  --difficulty-hard: #e11d48;
 }
 
 // System-preference fallback for the instant before the persisted/theme-service
@@ -70,5 +80,9 @@
 
     --scrim: rgba(0, 0, 0, 0.6);
     color-scheme: dark;
+
+    --difficulty-easy: var(--color-difficulty-easy);
+    --difficulty-medium: #c07f0c;
+    --difficulty-hard: #e11d48;
   }
 }

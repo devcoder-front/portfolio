@@ -42,6 +42,9 @@ export const SOCIAL_LINKS: readonly SocialLink[] = [
   { label: 'Location', href: '', icon: 'location' }
 ];
 
+export const LEETCODE_USERNAME = 'black_panther05';
+export const LEETCODE_PROFILE_URL = 'https://leetcode.com/u/black_panther05/';
+
 export const HERO_METRICS: readonly HeroMetric[] = [
   { value: 9, suffix: '+', label: 'Years of experience' },
   { value: 30, suffix: 'M+', label: 'Users served worldwide' },

@@ -30,6 +30,7 @@ export class Navbar {
     { id: 'experience', label: 'Experience' },
     { id: 'projects', label: 'Projects' },
     { id: 'skills', label: 'Skills' },
+    { id: 'leetcode', label: 'LeetCode' },
     { id: 'achievements', label: 'Achievements' },
     { id: 'education', label: 'Education' },
     { id: 'contact', label: 'Contact' }

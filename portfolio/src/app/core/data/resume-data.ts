@@ -13,7 +13,8 @@ import type {
   Profile,
   ProjectEntry,
   SkillCategory,
-  SocialLink
+  SocialLink,
+  TestimonialEntry
 } from '../models/resume.model';
 
 export const PROFILE: Profile = {
@@ -382,4 +383,44 @@ export const EDUCATION: EducationEntry = {
 export const LANGUAGES: readonly LanguageEntry[] = [
   { name: 'English', level: 'Professional' },
   { name: 'Hindi', level: 'Native' }
+];
+
+// Verbatim LinkedIn recommendations (linkedin.com/in/abhishek-sharma-293538191) — never paraphrase or embellish these.
+export const TESTIMONIALS: readonly TestimonialEntry[] = [
+  {
+    id: 'vibhav-singh',
+    name: 'Vibhav Singh',
+    title: 'SDE III at S&P Global',
+    relationship: 'Worked with Abhishek on the same team',
+    date: 'Jul 2022',
+    quote:
+      "We've worked together on several projects and Abhishek is one of the best people to have as a partner. I highly recommend him for his development skills. He is very energetic and a great learner. His ability to brainstorm the problem and finding out the perfect solution helped us during hard times. He also knows how to help his peers and get the best out of them."
+  },
+  {
+    id: 'amit-pateriya',
+    name: 'Amit Pateriya',
+    title: 'Java | Spring Boot | Gen AI | Python | Angular Tech Lead at Tech Mahindra',
+    relationship: 'Worked with Abhishek on the same team',
+    date: 'Jul 2022',
+    quote:
+      'Fantastic person to work with, with some extreme programming skills. Abhishek is one person you can totally rely on for any programming or development work. His analytical strength & coding skills are extraordinary & he is spot on time!'
+  },
+  {
+    id: 'mihir-shah',
+    name: 'Mihir Shah',
+    title: 'Senior Enterprise Software Engineer @Wolters Kluwer',
+    relationship: "Mihir was Abhishek's client",
+    date: 'Aug 2022',
+    quote:
+      "Abhishek and I worked together for more than a year on a project with Wolters Kluwer. He consistently gave 100% effort to the team and played a significant role in ensuring that we completed the assigned modules on time. He has an exceptional troubleshooting and analytical skills. Has an in-depth understanding of frontend development. I'm grateful to have worked with Abhishek and would like to recommend him for the SDE position."
+  },
+  {
+    id: 'leelakrishna-yadav',
+    name: 'Leelakrishna Yadav',
+    title: 'Technical Architect — J2EE, Spring, Hibernate, Webservices, AWS, Microservices (20Y)',
+    relationship: 'Leelakrishna managed Abhishek directly',
+    date: 'Nov 2022',
+    quote:
+      'Abhishek worked with me for an year and he had shown his willingness to learn and delivered FrontEnd (Angular) with good quality and determination. You can count on him for the tasks'
+  }
 ];

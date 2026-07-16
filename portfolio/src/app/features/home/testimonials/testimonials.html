@@ -1,21 +1,82 @@
 <section id="testimonials" class="section testimonials" aria-labelledby="testimonials-heading">
   <div class="section-inner">
-    <app-section-heading headingId="testimonials-heading" eyebrow="What colleagues say" title="Testimonials" />
+    <app-section-heading
+      headingId="testimonials-heading"
+      eyebrow="What colleagues say"
+      title="Testimonials"
+      subtitle="Real LinkedIn recommendations from managers, clients, and teammates."
+    />
 
-    <div class="testimonials__placeholder" appReveal>
-      <span class="testimonials__quote-icon">
-        <app-icon name="quote" [size]="26" />
-      </span>
-      <p>
-        Recommendations from managers and peers at Google, S&amp;P Global, HCLTech and GlobalLogic will appear here
-        once added.
-      </p>
-      @if (linkedIn) {
-        <a class="button button--secondary" [href]="linkedIn" target="_blank" rel="noopener noreferrer">
-          View recommendations on LinkedIn
-          <app-icon name="external" [size]="15" />
-        </a>
-      }
+    <div
+      class="testimonials__carousel"
+      appReveal
+      (pointerenter)="pauseAutoplay()"
+      (pointerleave)="resumeAutoplay()"
+      (focusin)="pauseAutoplay()"
+      (focusout)="resumeAutoplay()"
+    >
+      <div class="testimonials__viewport">
+        @for (t of [active()]; track activeIndex()) {
+          <article
+            class="testimonial-card"
+            [class.testimonial-card--backward]="direction() === 'backward'"
+            appSpotlight
+            aria-live="polite"
+          >
+            <div class="testimonial-card__top">
+              <span class="testimonial-card__quote-mark">
+                <app-icon name="quote" [size]="22" />
+              </span>
+              <span class="testimonial-card__badge">
+                <app-icon name="linkedin" [size]="13" />
+                LinkedIn Recommendation
+              </span>
+            </div>
+
+            <p class="testimonial-card__quote">&ldquo;{{ t.quote }}&rdquo;</p>
+
+            <div class="testimonial-card__person">
+              <span class="testimonial-card__avatar" aria-hidden="true">{{ initialsFor(t.name) }}</span>
+              <div class="testimonial-card__meta">
+                <p class="testimonial-card__name">{{ t.name }}</p>
+                <p class="testimonial-card__title">{{ t.title }}</p>
+                <p class="testimonial-card__relationship">{{ t.relationship }} · {{ t.date }}</p>
+              </div>
+            </div>
+          </article>
+        }
+      </div>
+
+      <div class="testimonials__nav">
+        <button type="button" class="testimonials__arrow testimonials__arrow--prev" (click)="prev()" aria-label="Previous testimonial">
+          <app-icon name="arrow-right" [size]="16" />
+        </button>
+
+        <div class="testimonials__dots" role="tablist" aria-label="Choose testimonial">
+          @for (t of testimonials; track t.id; let i = $index) {
+            <button
+              type="button"
+              class="testimonials__dot"
+              [class.is-active]="i === activeIndex()"
+              (click)="goTo(i)"
+              role="tab"
+              [attr.aria-selected]="i === activeIndex()"
+              [attr.aria-label]="'Show recommendation from ' + t.name"
+            ></button>
+          }
+        </div>
+
+        <button type="button" class="testimonials__arrow" (click)="next()" aria-label="Next testimonial">
+          <app-icon name="arrow-right" [size]="16" />
+        </button>
+      </div>
     </div>
+
+    @if (linkedIn) {
+      <a class="testimonials__cta" [href]="linkedIn" target="_blank" rel="noopener noreferrer">
+        View all recommendations on LinkedIn
+        <app-icon name="external" [size]="15" />
+      </a>
+    }
   </div>
 </section>

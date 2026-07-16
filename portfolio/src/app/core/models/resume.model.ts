@@ -72,3 +72,12 @@ export interface LanguageEntry {
   readonly name: string;
   readonly level: string;
 }
+
+export interface TestimonialEntry {
+  readonly id: string;
+  readonly name: string;
+  readonly title: string;
+  readonly relationship: string;
+  readonly date: string;
+  readonly quote: string;
+}

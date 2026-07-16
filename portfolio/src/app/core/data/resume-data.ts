@@ -19,10 +19,10 @@ import type {
 export const PROFILE: Profile = {
   name: 'Abhishek Sharma',
   initials: 'AS',
-  title: 'Senior Frontend Engineer | Angular Architect | Technical Lead',
-  tagline: '9+ Years · Angular · FinTech · FAANG Experience',
+  title: 'Senior Software Engineer | Technical Lead | Frontend Architecture & AI-Assisted Engineering',
+  tagline: '9+ Years · Angular & React · FinTech · Java (API Integration & Microservices Training) · AI-Assisted Engineering Leadership',
   summary:
-    'Senior Frontend Engineer with 9+ years of experience architecting enterprise web applications for Google, S&P Global and British Telecom, serving 30M+ users worldwide. Deep expertise in Angular, RxJS, TypeScript, system design and NgRx, with a track record of improving application performance by up to 40%, achieving 99% test coverage, mentoring engineering teams, and delivering scalable Angular solutions for FinTech and large-scale enterprise products using AI-assisted engineering practices.',
+    'Senior Software Engineer with 9+ years architecting enterprise Angular and React applications across FinTech and large-scale platforms, including client engagements with Google, S&P Global, and British Telecom serving 30M+ users combined. Regularly integrates with Java-based backend services — handling API integration and production root-cause analysis — and completed formal Java and Microservices training during onboarding at Infosys, alongside hands-on SQL and NoSQL project experience. Leads frontend architecture, testing strategy, and AI-assisted engineering adoption: introduced LLM-based development workflows at S&P Global together with responsible-AI and data-sensitivity validation standards, and raised a compliance platform’s unit test coverage from 70% to 99%.',
   location: 'Delhi NCR, India',
   email: 'abhisheks647@gmail.com',
   currentRole: 'Software Architect',
@@ -61,13 +61,12 @@ export const EXPERIENCE: readonly ExperienceEntry[] = [
     projectTag: 'CLO Compliance Platform · FinTech · B2B · LLM / AI Agents',
     technologies: ['Angular', 'TypeScript', 'JavaScript', 'LLM / AI Agents', 'Python DSL'],
     highlights: [
-      'Lead end-to-end delivery of a critical B2B compliance platform, collaborating with Product Owners, Business Analysts, QA, and Backend Engineers to design scalable solutions for financial institutions.',
-      'Architected and delivered a Stress Testing framework enabling Python DSL-based rule simulation against historical datasets, improving regulatory validation by 30% and trade compliance analysis.',
-      'Improved application performance by 20%, security, and maintainability by implementing session management, intelligent auto logout, reusable component architecture, and optimized Angular rendering.',
-      'Introduced AI-assisted engineering workflows using LLMs, accelerating feature development and improving developer productivity across the team.',
-      'Increased unit test coverage from 70% to 99%, enabling high-quality releases with zero regression defects through robust testing and code review practices.',
-      'Partner with engineering leadership to define technical solutions, estimate project scope, identify delivery risks, and ensure on-time release of high-quality software.',
-      'Implemented clean architecture, reusable component design, coding standards, and knowledge sharing to improve long-term maintainability and engineering velocity.'
+      'Led end-to-end delivery of a B2B regulatory compliance platform, partnering with Product, QA, and Backend engineering to define API contracts and scalable financial workflows.',
+      'Architected a Stress Testing framework enabling Python DSL-based rule simulation, improving regulatory validation by 30%.',
+      'Improved application performance by 20% through session management, intelligent auto-logout, and Angular rendering optimization.',
+      "Introduced AI-assisted engineering workflows using LLMs into the team's delivery process, establishing data-sensitivity and responsible-AI usage guidelines and validation standards alongside adoption to accelerate feature development.",
+      'Raised unit test coverage from 70% to 99%, enabling releases with zero regression defects.',
+      'Established component design standards and code-review practices adopted across the team.'
     ]
   },
   {
@@ -81,11 +80,12 @@ export const EXPERIENCE: readonly ExperienceEntry[] = [
     projectTag: 'Google Nest Developer Console (NDC) · 10M+ Users · Micro Frontend',
     technologies: ['Angular 18', 'Angular Material', 'Micro Frontend', 'CI/CD'],
     highlights: [
-      'Led frontend development for the Google Nest Developer Console, delivering scalable Angular applications supporting 10M+ users.',
-      'Modernized the platform using Angular Material, WCAG compliant components, Micro Frontend architecture, and reusable design systems, improving page performance and rendering speed by 25%.',
-      'Delivered OTA device management and Cloud-to-Cloud integration workflows while optimizing application performance through lazy loading, code splitting, and efficient change detection.',
-      'Resolved 200+ P0/P1 production issues, strengthened CI/CD pipelines, and achieved 99%+ test coverage with zero-regression releases.',
-      'Mentored engineers, authored technical design documentation, and drove engineering best practices through architecture reviews and code reviews.'
+      'Led frontend development for the Google Nest Developer Console, delivering Angular applications for 10M+ users on a micro-frontend architecture.',
+      'Contributed to high-level system design for major NDC features, partnering with backend engineering on API design and with Product on requirements.',
+      'Modernized the platform with Angular Material and WCAG-compliant components, improving rendering speed by 25%.',
+      'Delivered OTA device management and Cloud-to-Cloud integration workflows, optimized via lazy loading and code splitting.',
+      'Resolved 200+ P0/P1 production issues through direct collaboration with backend teams on root-cause analysis.',
+      'Mentored engineers and drove architecture and code-review standards across the team.'
     ]
   },
   {
@@ -99,9 +99,9 @@ export const EXPERIENCE: readonly ExperienceEntry[] = [
     projectTag: 'Google Qplus Platform & Chrome Extension',
     technologies: ['Angular 8+', 'TypeScript', 'REST APIs', 'Chrome Extensions'],
     highlights: [
-      "Developed enterprise web applications and Chrome Extensions for Google's QPlus platform using Angular, TypeScript, and REST APIs, improving application responsiveness by 40%.",
-      'Designed reusable metadata-driven dynamic forms and shared component libraries, improving scalability, maintainability, and feature delivery.',
-      'Reduced API failures and production defects through optimized data transformation, resilient API integration, and proactive root cause analysis.'
+      "Developed enterprise web applications and Chrome Extensions for Google's QPlus platform, improving responsiveness by 40%.",
+      'Designed reusable metadata-driven dynamic forms and shared component libraries, translating Figma designs into production UI.',
+      'Reduced API failures and production defects through close collaboration with backend engineers on resilient API integration and root-cause analysis.'
     ]
   },
   {
@@ -113,11 +113,11 @@ export const EXPERIENCE: readonly ExperienceEntry[] = [
     endDate: 'Nov 2021',
     isCurrent: false,
     projectTag: 'Employee Daily Time Collection (EDTC) · 20K+ Users',
-    technologies: ['Angular', 'NgRx', 'Azure AD', 'OAuth2 SSO'],
+    technologies: ['React', 'Redux', 'Azure AD', 'OAuth2 SSO'],
     highlights: [
-      'Led a 6-member Agile team to deliver a workforce management platform serving 20K+ enterprise users, driving architecture, technical delivery, and cross-functional collaboration.',
-      'Improved frontend performance by 25% and API response time by 20% through Angular optimization, NgRx state management, caching, and HTTP interceptors.',
-      'Implemented Azure AD OAuth2 Single Sign-On, strengthened application security, and delivered accessible, internationalized enterprise applications following WCAG standards.'
+      'Led a 6-member Agile team to deliver a workforce management platform built in React, serving 20K+ enterprise users.',
+      'Improved frontend performance by 25% and API response time by 20% using Redux, caching, and HTTP interceptor patterns.',
+      'Implemented Azure AD OAuth2 Single Sign-On and delivered accessible, internationalized applications per WCAG standards.'
     ]
   },
   {
@@ -129,11 +129,13 @@ export const EXPERIENCE: readonly ExperienceEntry[] = [
     endDate: 'Dec 2020',
     isCurrent: false,
     projectTag: 'System Assurance UI · Speed Test · Broadband Checker · 20M+ Users',
-    technologies: ['Angular', 'TypeScript', 'MVVM'],
+    technologies: ['Angular', 'TypeScript', 'MVVM', 'Java (API Integration)', 'SQL', 'NoSQL'],
     highlights: [
-      'Developed enterprise-scale customer applications for British Telecom, delivering responsive, WCAG-compliant solutions supporting 20M+ users.',
-      'Built high-performance applications including System Assurance UI, BT Speed Test, and Broadband Availability Checker using Angular, TypeScript, and MVVM architecture.',
-      'Improved software quality through reusable component development, performance optimization, production support, and cross-functional Agile collaboration.'
+      'Developed enterprise-scale customer applications for British Telecom, supporting 20M+ users with responsive, WCAG-compliant UIs.',
+      'Built System Assurance UI, BT Speed Test, and Broadband Availability Checker using Angular, TypeScript, and MVVM architecture, integrating with Java-based backend APIs.',
+      'Performed root-cause analysis on production issues in collaboration with backend teams, and completed 6 months of formal Java and Microservices training as part of Infosys onboarding.',
+      'Worked with SQL and NoSQL data stores to support application data requirements.',
+      'Improved software quality through reusable components, performance optimization, and cross-functional Agile collaboration.'
     ]
   }
 ];
@@ -193,7 +195,7 @@ export const PROJECTS: readonly ProjectEntry[] = [
     problem:
       "Google's QPlus platform needed enterprise web applications and companion Chrome Extensions with resilient REST API integration.",
     solution:
-      'Built the applications and extensions in Angular and TypeScript, and designed reusable metadata-driven dynamic forms and shared component libraries to speed up future feature delivery.',
+      'Built the applications and extensions in Angular and TypeScript, and designed reusable metadata-driven dynamic forms and shared component libraries — translating Figma designs into production UI — to speed up future feature delivery.',
     architecture:
       'Metadata-driven dynamic form architecture with shared, reusable component libraries for scalability and maintainability.',
     techStack: ['Angular 8+', 'TypeScript', 'REST APIs', 'Chrome Extensions'],
@@ -215,10 +217,10 @@ export const PROJECTS: readonly ProjectEntry[] = [
     problem:
       'Wolters Kluwer needed a workforce management platform for 20K+ enterprise users with secure, single sign-on access.',
     solution:
-      'Led a 6-member Agile team delivering the platform end-to-end, implementing Azure AD OAuth2 Single Sign-On and NgRx-driven state management.',
+      'Led a 6-member Agile team delivering the platform end-to-end in React, implementing Azure AD OAuth2 Single Sign-On and Redux-driven state management.',
     architecture:
-      'Angular front end with NgRx state management, HTTP interceptors, and caching, secured via Azure AD OAuth2 SSO.',
-    techStack: ['Angular', 'NgRx', 'Azure AD', 'OAuth2 SSO'],
+      'React front end with Redux state management, HTTP interceptors, and caching, secured via Azure AD OAuth2 SSO.',
+    techStack: ['React', 'Redux', 'Azure AD', 'OAuth2 SSO'],
     impact: [
       'Improved frontend performance by 25%',
       'Improved API response time by 20%',
@@ -226,7 +228,7 @@ export const PROJECTS: readonly ProjectEntry[] = [
     ],
     challenges:
       'Coordinating a 6-member Agile team across architecture and delivery while meeting enterprise security and accessibility requirements simultaneously.',
-    deliverables: ['Azure AD OAuth2 SSO', 'NgRx state management layer', 'WCAG-compliant, internationalized UI'],
+    deliverables: ['Azure AD OAuth2 SSO', 'Redux state management layer', 'WCAG-compliant, internationalized UI'],
     repoAvailable: false,
     demoAvailable: false
   },
@@ -238,10 +240,14 @@ export const PROJECTS: readonly ProjectEntry[] = [
     problem:
       'British Telecom required responsive, WCAG-compliant customer applications capable of supporting 20M+ users.',
     solution:
-      'Built System Assurance UI, BT Speed Test, and the Broadband Availability Checker using Angular, TypeScript, and MVVM architecture.',
+      'Built System Assurance UI, BT Speed Test, and the Broadband Availability Checker using Angular, TypeScript, and MVVM architecture, integrating with Java-based backend APIs and SQL/NoSQL data stores.',
     architecture: 'MVVM architecture with reusable component development across the three applications.',
-    techStack: ['Angular', 'TypeScript', 'MVVM'],
-    impact: ['Supported 20M+ users', 'Improved software quality through reusable component development and performance optimization'],
+    techStack: ['Angular', 'TypeScript', 'MVVM', 'Java (API Integration)', 'SQL', 'NoSQL'],
+    impact: [
+      'Supported 20M+ users',
+      'Improved software quality through reusable component development and performance optimization',
+      'Completed 6 months of formal Java and Microservices training during Infosys onboarding'
+    ],
     challenges:
       'Delivering three distinct, high-traffic customer-facing applications while maintaining consistent quality and WCAG compliance across all of them.',
     deliverables: ['System Assurance UI', 'BT Speed Test', 'Broadband Availability Checker'],
@@ -255,6 +261,8 @@ export const SKILLS: readonly SkillCategory[] = [
     category: 'Frontend',
     items: [
       'Angular (v2–v21)',
+      'React',
+      'Redux',
       'TypeScript',
       'JavaScript (ES6+)',
       'HTML5',
@@ -268,6 +276,10 @@ export const SKILLS: readonly SkillCategory[] = [
     ]
   },
   {
+    category: 'Backend & Data Exposure',
+    items: ['Java (API integration & production debugging)', 'Microservices (formal training, Infosys)', 'SQL', 'NoSQL', 'REST APIs', 'Node.js']
+  },
+  {
     category: 'Architecture',
     items: [
       'Micro Frontends',
@@ -275,9 +287,19 @@ export const SKILLS: readonly SkillCategory[] = [
       'MVVM',
       'State Management',
       'Responsive Web Design',
-      'Design Systems',
-      'REST APIs',
-      'GraphQL'
+      'Design Systems'
+    ]
+  },
+  {
+    category: 'AI / LLM Engineering',
+    items: [
+      'AI-Assisted Development',
+      'LLM Integration',
+      'Prompt Engineering',
+      'AI Agents',
+      'Responsible AI / Data-Sensitivity Validation',
+      'GitHub Copilot',
+      'Claude Code'
     ]
   },
   {
@@ -288,20 +310,12 @@ export const SKILLS: readonly SkillCategory[] = [
       'Code Splitting',
       'Bundle Optimization',
       'Caching',
-      'Rendering Optimization',
-      'Performance Tuning'
+      'Rendering Optimization'
     ]
   },
   {
-    category: 'AI / LLM',
-    items: [
-      'AI-Assisted Development',
-      'LLM Integration',
-      'Prompt Engineering',
-      'AI Agents',
-      'GitHub Copilot',
-      'Claude Code'
-    ]
+    category: 'Design & Collaboration',
+    items: ['Figma (UI design collaboration)', 'Cross-functional API design with backend engineering']
   },
   {
     category: 'Testing',
@@ -312,21 +326,20 @@ export const SKILLS: readonly SkillCategory[] = [
       'Integration Testing',
       'Test-Driven Development (TDD)',
       'Code Reviews',
-      'Static Code Analysis',
-      'Scuba'
+      'Static Code Analysis'
     ]
   },
   {
-    category: 'Cloud & Security',
+    category: 'Security',
     items: ['Azure AD', 'OAuth 2.0', 'Single Sign-On (SSO)', 'Authentication', 'Authorization', 'REST Security']
   },
   {
-    category: 'Data & Visualization',
-    items: ['Ag-Grid', 'Highcharts', 'Angular Material', 'JSON', 'SQL']
+    category: 'DevOps / Tools',
+    items: ['Git/GitHub (6+ yrs)', 'Jenkins CI/CD (6+ yrs)', 'Jira', 'Chrome DevTools', 'VS Code', 'Linux CLI']
   },
   {
-    category: 'DevOps / Tools',
-    items: ['Git', 'Jenkins CI/CD', 'Jira', 'Chrome DevTools', 'Visual Studio Code', 'Linux CLI']
+    category: 'Problem Solving',
+    items: ['Data Structures & Algorithms (active LeetCode practice)']
   }
 ];
 
@@ -358,7 +371,7 @@ export const AWARDS: readonly Award[] = [
 ];
 
 export const EDUCATION: EducationEntry = {
-  degree: 'Bachelor of Engineering (B.E.) in Computer Science',
+  degree: 'Bachelor of Engineering (B.E.) in Medical Electronics',
   institution: 'M. S. Ramaiah Institute of Technology (MSRIT), Bangalore',
   period: '2012 – 2016'
 };

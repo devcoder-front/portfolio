@@ -9,13 +9,15 @@ import type { IconName } from '../../../shared/components/icon/icon';
 
 const CATEGORY_ICONS: Record<string, IconName> = {
   Frontend: 'code',
+  'Backend & Data Exposure': 'briefcase',
   Architecture: 'briefcase',
+  'AI / LLM Engineering': 'sparkle',
   'Performance Engineering': 'sparkle',
-  'AI / LLM': 'sparkle',
+  'Design & Collaboration': 'external',
   Testing: 'check',
-  'Cloud & Security': 'external',
-  'Data & Visualization': 'award',
-  'DevOps / Tools': 'code'
+  Security: 'external',
+  'DevOps / Tools': 'code',
+  'Problem Solving': 'award'
 };
 
 @Component({
